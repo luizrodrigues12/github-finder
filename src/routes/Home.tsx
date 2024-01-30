@@ -6,9 +6,11 @@ import Error from "../components/Error";
 import classes from "../App.module.css";
 
 function Home() {
+  //STATES
   const [user, setUser] = useState<UserProps | null>(null);
   const [error, setError] = useState(false);
 
+  //CARREGAR USUÁRIO
   const loadUser = async (userName: string) => {
     setError(false);
     setUser(null);
@@ -21,8 +23,8 @@ function Home() {
       return;
     }
 
+    //INFORMAÇÕES DO USUÁRIO
     const { avatar_url, login, location, followers, following } = data;
-
     const userData: UserProps = {
       avatar_url,
       login,

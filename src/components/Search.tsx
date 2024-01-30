@@ -1,18 +1,24 @@
-type SearchProps = {
-  loadUser: (userName: string) => Promise<void>;
-};
-
 import { KeyboardEvent } from "react";
 import classes from "./Search.module.css";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
+// Tipo
+type SearchProps = {
+  loadUser: (userName: string) => Promise<void>;
+};
+
 const Search = ({ loadUser }: SearchProps) => {
   const [userName, setUserName] = useState("");
 
+  //Manipular aperto da tecla enter
   const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter") {
-      loadUser(userName);
+      if (userName === "") {
+        alert("Nenhum usuário digitado!");
+      } else {
+        loadUser(userName);
+      }
     }
   };
 
@@ -22,6 +28,7 @@ const Search = ({ loadUser }: SearchProps) => {
       <p className={classes.search__p}>Conheça seus melhores repositórios</p>
       <div className={classes.search__container}>
         <input
+          name="input"
           type="text"
           placeholder="Digite o nome do usuário"
           onChange={(e) => setUserName(e.target.value)}
@@ -29,7 +36,13 @@ const Search = ({ loadUser }: SearchProps) => {
           onKeyDown={handleKeyDown}
         />
         <button
-          onClick={() => loadUser(userName)}
+          onClick={() => {
+            if (userName === "") {
+              alert("Nenhum usuário digitado!");
+            } else {
+              loadUser(userName);
+            }
+          }}
           className={classes.search__container__button}
         >
           <BsSearch />
