@@ -1,13 +1,17 @@
-import { Outlet } from "react-router-dom";
-
-import classes from "./App.module.css";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
 
 function App() {
   return (
-    <div className={classes.app}>
-      <h1 className={classes.app__h1}>GitHub Finder</h1>
-      <Outlet />
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </HashRouter>
+    // <div className={classes.app}>
+    //   <h1 className={classes.app__h1}>GitHub Finder</h1>
+    //   <Outlet />
+    // </div>
   );
 }
 

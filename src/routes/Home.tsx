@@ -3,6 +3,7 @@ import Search from "../components/Search";
 import { useState } from "react";
 import User from "../components/User";
 import Error from "../components/Error";
+import classes from "../App.module.css";
 
 function Home() {
   const [user, setUser] = useState<UserProps | null>(null);
@@ -34,7 +35,8 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className={classes.center}>
+      <h1 className={classes.app__h1}>GitHub Finder</h1>
       <Search loadUser={loadUser} />
       {user && <User {...user} />}
       {error && <Error />}
