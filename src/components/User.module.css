@@ -1,0 +1,50 @@
+.user {
+  background-color: #2b3566;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.user__img {
+  width: 140px;
+  height: 140px;
+  border: 4px solid #644aff;
+  border-radius: 50%;
+}
+
+.user__location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.user__location svg {
+  fill: #4ed8c7;
+  font-size: 1.5rem;
+}
+
+.user__stats {
+  display: flex;
+}
+
+.user__stats div {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.user__stats div:first-child {
+  border-right: 1px solid #9da5d1;
+}
+
+.user__following,
+.user__followers {
+  background-color: #4ed8c7;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+}
