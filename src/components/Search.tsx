@@ -3,7 +3,6 @@ import classes from "./Search.module.css";
 import { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
-// Tipo
 type SearchProps = {
   loadUser: (userName: string) => Promise<void>;
 };
@@ -34,6 +33,8 @@ const Search = ({ loadUser }: SearchProps) => {
           onChange={(e) => setUserName(e.target.value)}
           className={classes.search__container__input}
           onKeyDown={handleKeyDown}
+          value={userName}
+          autoComplete="off"
         />
         <button
           onClick={() => {
@@ -41,6 +42,7 @@ const Search = ({ loadUser }: SearchProps) => {
               alert("Nenhum usuário digitado!");
             } else {
               loadUser(userName);
+              setUserName("");
             }
           }}
           className={classes.search__container__button}
