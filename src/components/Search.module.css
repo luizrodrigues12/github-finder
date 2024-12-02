@@ -1,6 +1,8 @@
 .search {
   background-color: #2b3566;
-  padding: 2rem;
+  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 40px;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -12,6 +14,10 @@
 
 .search__p {
   color: #9da5d1;
+}
+
+.search h2 {
+  font-size: 1.5em;
 }
 
 .search__container {
@@ -36,4 +42,14 @@
 
 .search__container__input {
   border: 2px solid #0e1129;
+}
+
+@media (max-width: 768px) {
+  .search h2 {
+    font-size: 1.4em;
+  }
+
+  .search__p {
+    font-size: 1em;
+  }
 }
